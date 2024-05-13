@@ -1,11 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 #top_header{
-    height: 300px;
+    height: 220px;
     background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 0px 0px;
 }
 
 #top_header > h1::before{
-    content: "";
+    content: url(../img/KIT_logo.gif);;
     display: block;
-    background-image: url(../img/KIT_logo.gif);
-    background-size: cover;
+    width: 40px;
+    height: 40px;
 }
+
+
+#top_header > h1{
+    position: absolute;
+    left: 25%;
+    font-size: 40px;
+    font-family: "Itim",cursive;
+}
+
+#top_header > h2{
+    position: absolute;
+    left: 25%;
+    font-family: "Itim",cursive;
+    position: absolute;
+}
+
+#top_header > p{
+    position: absolute;
+    left: 80%;
+}
+
+#nav-pc{
+    position:absolute;
+    top: 170px;
+    right: 25%;
+    font-size: 20px;
+}
+
+/* リンクの装飾*/
+#nav-pc > a{
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+#nav-pc > a:link{
+    color: black;
+}
+
+#nav-pc > a:visited{
+    color: black;
+}
+
+#nav-pc > a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+#nav-pc > a:active{
+    color: black;
+}
+/* ーーーーーーーーー */
