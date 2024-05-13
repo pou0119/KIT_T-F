@@ -1,4 +1,11 @@
+/* フォントの設定 */
+
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Gothic');
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+body {
+    font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+ }
+
 
 #top_header{
     height: 220px;
@@ -6,7 +13,10 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    margin: 0px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    border-radius: 476px 0 476px 0;
 }
 
 #top_header > h1::before{
@@ -43,10 +53,13 @@
     font-size: 20px;
 }
 
+
 /* リンクの装飾*/
 #nav-pc > a{
     margin-left: 20px;
     text-decoration: none;
+    font-family: 'Sawarabi Gothic', sans-serif;
+
 }
 
 #nav-pc > a:link{
