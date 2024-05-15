@@ -53,13 +53,11 @@ body {
     font-size: 20px;
 }
 
-
 /* リンクの装飾*/
 #nav-pc > a{
     margin-left: 20px;
     text-decoration: none;
     font-family: 'Sawarabi Gothic', sans-serif;
-
 }
 
 #nav-pc > a:link{
