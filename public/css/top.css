@@ -174,10 +174,11 @@ body {
     margin-top: 40px;
 }
 
-#new_student > h2::before ,#new_student > h2::after{
+#new_student > h2::before ,#new_student > h2::after,#active_place > h2::before,#active_place > h2::after{
     content: url(../img/top/line.png);
 }
 #new_student > h2{
+    font-size: 40px;
     margin:40px 0 40px 0;
 }
 
@@ -235,4 +236,42 @@ body {
 }
 #massage4{
     margin-top: 40px;
+}
+
+.detail_place{
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+#eng_place,#info_place{
+    position: relative;
+    display: flex;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+#active_place>h2{
+    font-size: 40px;
+}
+
+#eng_place>h3,#info_place>h3{
+    position: absolute;
+    font-size: 30px;
+    top:100px;
+    left: 200px;
+    right: 100px;
+    bottom: 20px;
+}
+#eng_place>p,#info_place>p{
+    position: absolute;
+    font-size: 20px;
+    top: 180px;
+    left: 200px;
+    right: 100px;
+    bottom: 20px;
+}
+.map{
+    margin-left: 50%;
+    width: 50%;
+    margin-right: 30px;
 }
