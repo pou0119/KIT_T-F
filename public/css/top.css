@@ -182,7 +182,6 @@ body {
 }
 
 #new_student > p{
-    text-align: center;
     font-size:20px;
 }
 
@@ -216,13 +215,17 @@ body {
     background-color: #ffffff;
     z-index: 11;
     border: 1px solid #000000;
-    border-radius: 100px 100px 100px 100px;
+    border-radius: 50px 50px 50px 50px;
     font-size: 15px;
-    text-align: center;
     top:340px;
+    
 }
 
 .new_student_massage > h3{
+    text-align: center;
+}
+
+.message_center{
     text-align: center;
 }
 
