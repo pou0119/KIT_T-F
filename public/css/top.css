@@ -218,6 +218,7 @@ body {
     border-radius: 50px 50px 50px 50px;
     font-size: 15px;
     top:340px;
+    text-align: center;
     
 }
 
@@ -234,10 +235,4 @@ body {
 }
 #massage4{
     margin-top: 40px;
-}
-
-.detail_place{
-    margin-left: 20px;
-    text-decoration: none;
-
 }
