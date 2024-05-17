@@ -52,7 +52,7 @@ body {
     left: 80%;
 }
 
-#nav-pc{
+#nav-pc-top{
     position:absolute;
     top: 170px;
     right: 25%;
@@ -60,26 +60,26 @@ body {
 }
 
 /* リンクの装飾*/
-#nav-pc > a{
+#nav-pc-top > a , #nav-pc-end > a{
     margin-left: 20px;
     text-decoration: none;
     font-family: 'Sawarabi Gothic', sans-serif;
 }
 
-#nav-pc > a:link,.detail_place:link{
+#nav-pc-top > a:link,.detail_place:link,#nav-pc-end>a:link{
     color: black;
 }
 
-#nav-pc > a:visited,.detail_place:visited{
+#nav-pc-top > a:visited,.detail_place:visited,#nav-pc-end>a:visited{
     color: black;
 }
 
-#nav-pc > a:hover ,.detail_place:hover{
+#nav-pc-top > a:hover ,.detail_place:hover,#nav-px-end>a:hover{
     color: black;
     text-decoration: underline;
 }
 
-#nav-pc > a:active,.detail_place:active{
+#nav-pc-top > a:active,.detail_place:active,#nav-pc-end>a:active{
     color: black;
 }
 /* ーーーーーーーーー */
@@ -294,4 +294,36 @@ body {
     height: 100px;
     box-shadow: 10px 10px 10px black;
     text-align: center;
+}
+
+/* フッターの作成 */
+#footer-back{
+    max-width: 1200px;
+    height: 11  0px;
+    background-color: aqua;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}       
+
+
+#instagram::after{
+    content: url(../img/instagram_icon.png);
+    
+}
+
+#twiter::after{
+    content: url(../img/Twitter_icon.png);
+}
+
+#footer-line{
+    color: #ffffff;
+}
+#footer-back>p:nth-of-type(2){
+    font-size: 10px;
+    margin: 0px;
+}
+#footer-back>p{
+    margin: 0px;
 }
