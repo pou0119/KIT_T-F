@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 body {
     font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
- }
+}
 
 .backgraund{
     max-width: 1200px;
@@ -84,12 +84,12 @@ body {
 
 #back-btn {
     color: #ffffff;
-    font-size: 50px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: black;
+    background-color: rgb(99, 157, 224);
     text-align: center;
     width: 60px;
     height: 60px;
