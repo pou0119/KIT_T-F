@@ -10,17 +10,15 @@ function flipCard(event) {
       $card = $btnFace.parent('.card-object');
   
   if( $card.hasClass('flip-in') ) {
-    closeCards();
+    closeCards($card);
   } else {
-    closeCards();
     openCard($card);
   }
   
 }
 
-function closeCards() {
-  $cards.each( function() {
-    $(this)
+function closeCards($card) {
+  $card
       .filter('.flip-in')
       .removeClass('flip-in')
       .queue( function() {
@@ -30,8 +28,6 @@ function closeCards() {
           .addClass('flip-out')
           .dequeue();
       })
-      
-  });
 }
 
 function openCard($card) {
