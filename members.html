@@ -8,23 +8,34 @@
         <link rel="stylesheet" href="./public/css/members.css">
     </head>
     <body>
-        <!-- ヘッダーの埋め込み -->
-        <div id="header"></div>
-        <script>
-            fetch("header.html")
-          .then((response) => response.text())
-          .then((data) => document.querySelector("#header").innerHTML = data);
-        </script>
+      <header class="backgraund">
+        <div id="top_header">
+            <h1>九州工業大学陸上競技部</h1>
+            <h2>TRACK & FIELD</h2>
+            <p id="update_date">更新日 2024.5.14</p>
+                <nav id="nav-pc-top">
+                    <a href="about.html">概要</a>
+                    <a href="records.html">記録</a>
+                    <a href="menber.html">選手紹介</a>
+                    <a href="article.html">陸ブログ</a>
+                </nav>
+        </div>
+      </header> 
 
-
-        <!-- フッターの埋め込み -->
-       <div id="footer"></div>
-       <script>
-        fetch("footer.html")
-          .then((response) => response.text())
-          .then((data) => document.querySelector("#footer").innerHTML = data);
-       </script>
-       <script src="./public/js/scrol.js"></script>
-       <script src="./public/js/main.js"></script>
+      <footer>
+        <div id="footer-back">
+            <nav id="nav-pc-end">
+                <a href="about.html">概要</a>
+                <a href="records.html">記録</a>
+                <a href="menber.html">選手紹介</a>
+                <a href="article.html">陸ブログ</a>
+                <a href="article.html" id="instagram"></a>
+                <a href="article.html" id="twiter"></a>
+            </nav>
+            <hr id="footer-line">
+            <p>九州工業大学陸上競技部</p>
+            <p>copyright © 2024 Kyushu Institute of Technology University Track and Field Club</p>
+        </div>
+      </footer>
     </body>
 </html>
