@@ -15,6 +15,8 @@ html,
 body {
   height: 100%;
 }
+
+
 .cards-wrapper {
   position: relative;
   height: 100%;
@@ -26,8 +28,7 @@ body {
   align-items: center;
 }
 .card-wrapper {
-  display: block;
-  float: left;
+  display: flex;
   position: relative;
   margin: 0;
   width: 28%;
@@ -37,8 +38,6 @@ body {
 }
 .card-object {
   color: #FFF;
-  display: block;
-  float: left;
   position: absolute;
   top: 12%/2;
   left: 12%/2;
@@ -272,7 +271,7 @@ body {
 .info-content-item span {
   display: block;
   font-weight: bold;
-  font-size: 1.1vw;
+  font-size: 1vw;
   margin-top: 7px;
   text-transform: none;
   color: #222;
