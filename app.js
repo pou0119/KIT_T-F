@@ -31,6 +31,7 @@ app.get('/footer', (req, res) => {
 
 app.get('/', (req, res) => {
 
+
         // top.htmlをクライアントに送信する前に、データをテンプレートに渡して組み込む
         res.render('top.ejs');
     });
@@ -38,7 +39,38 @@ app.get('/', (req, res) => {
 
 
 app.get('/member', (req, res) => {
-    res.render('member');
+    connection.query('SELECT * FROM member WHERE event_id=2',(error,results2,fields)=>{
+        if(error){
+            console.log('データの取得中にエラーが発生しました:', error);
+            return;
+        }
+
+        connection.query('SELECT * FROM member WHERE event_id=3',(error,results3,fields)=>{
+            if(error){
+                console.log('データの取得中にエラーが発生しました:', error);
+                return;
+            }
+
+            connection.query('SELECT * FROM member WHERE event_id=4',(error,results4,fields)=>{
+                if(error){
+                    console.log('データの取得中にエラーが発生しました:', error);
+                    return;
+                }
+                connection.query('SELECT * FROM member WHERE event_id=1', (error, results1, fields) => {
+                    if (error) {
+                      console.error('データの取得中にエラーが発生しました:', error);
+                      return;
+                    }
+                    res.render('member',{data1:results1,data2:results2,data3:results3,data4:results4});
+                });
+                
+            });
+            
+        });
+
+    });
+    
+    
 });
 
 app.listen(port, () => {
