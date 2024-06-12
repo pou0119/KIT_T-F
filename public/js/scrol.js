@@ -1,5 +1,4 @@
 const backBtn = document.getElementById('back-btn');
-console.log('dekiteruyo');
 window.addEventListener('scroll',()=>{
     // スクロール量をpxで取得
     const scrollValue=document.scrollingElement.scrollTop;

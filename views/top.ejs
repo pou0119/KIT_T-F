@@ -5,25 +5,22 @@
         <meta charset="UTF-8">
         <title>九州工業大学陸上競技部</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./public/css/top.css">
+        <link rel="stylesheet" href="/css/top.css">
 
     </head>
     <body>
-       <header class="backgraund">
-        <div id="top_header">
-            <h1>九州工業大学陸上競技部</h1>
-            <h2>TRACK & FIELD</h2>
-            <p id="update_date">更新日 2024.5.14</p>
-                <nav id="nav-pc-top">
-                    <a href="about.html">概要</a>
-                    <a href="records.html">記録</a>
-                    <a href="menber.html">選手紹介</a>
-                    <a href="article.html">陸ブログ</a>
-                </nav>
-        </div>
-       </header> 
+       <div id="header"></div>
+       <script>
+           fetch("/header")
+               .then(response => response.text())
+               .then(data => {
+                   document.querySelector("#header").innerHTML = data;
+               })
+               .catch(error => console.error('Error fetching header:', error));
+       </script>
+
        <main class="backgraund">
-            <a id="back-btn" href="./top.html#top_header">∧</a>
+            <a id="back-btn" href="/#header">TOPへ</a>
             <article>
                 <section id="main_visual">
                     <div id="main_section">
@@ -38,11 +35,13 @@
                 </section>
                 <section id="new_student">
                     <h2>新入生の皆さんへ</h2>
+
+
                     <p>新入生の皆さん、御入学おめでとうございます。陸上競技部では、部員、マネージャーを募集しています。<br>高校までに陸上の経験がない方でも、他のスポーツをやっていた方でもどんな方でも歓迎しています。</p>
                     <div>
                         <div id="new_student_left">
                             <div>
-                                <img src="./public/img/top/main_visual_image_2.JPG" class="new_student_image">
+                                <img src="/img/top/main_visual_image_2.JPG" class="new_student_image">
                                 <div class="new_student_massage">
                                     <h3>どんな部活?</h3>
                                     <p id="massage1">陸上競技部の年間を通した主な活動については、<br>
@@ -55,7 +54,7 @@
                                 </div>
                             </div>
                             <div>
-                                <img src="./public/img/top/main_visual_image_1.JPG" class="new_student_image">
+                                <img src="/img/top/main_visual_image_1.JPG" class="new_student_image">
                                 <div class="new_student_massage">
                                     <h3>活動日時</h3>
                                     <p id="massage2">各パートで全体練習の曜日を決め、<br>
@@ -70,7 +69,7 @@
                         </div>
                         <div id="new_student_right">
                             <div >
-                                <img src="./public/img/top/main_visual_image_3.JPG" class="new_student_image">
+                                <img src="/img/top/main_visual_image_3.JPG" class="new_student_image">
                                 <div class="new_student_massage">
                                     <h3>活動場所</h3>
                                     <p id="massage3">戸畑キャンパス、飯塚キャンパス両間は片道1～1.5時間ほどかかるため、<br>
@@ -79,11 +78,11 @@
                                         戸畑キャンパス: 学内グラウンド、北九州市立鞘ヶ谷陸上競技場<br>
                                         ​飯塚キャンパス: 学内グラウンド
                                     </p>
-                                    <a href="./top.html#active_place" class="detail_place">詳しくはこちら➡</a>
+                                    <a href="./top.ejs#active_place" class="detail_place">詳しくはこちら➡</a>
                                 </div>
                             </div>
                             <div>
-                                <img src="./public/img/top/new_student_image_1.jpg" class="new_student_image">
+                                <img src="/img/top/new_student_image_1.jpg" class="new_student_image">
                                 <div class="new_student_massage">
                                     <h3>諸費用について</h3>
                                     <p id="massage4">入部後、指定のユニフォームやジャージ、ポロシャツ等を<br>
@@ -121,22 +120,16 @@
             </article>
             
        </main>
-       <footer>
-        <div id="footer-back">
-            <nav id="nav-pc-end">
-                <a href="about.html">概要</a>
-                <a href="records.html">記録</a>
-                <a href="menber.html">選手紹介</a>
-                <a href="article.html">陸ブログ</a>
-                <a href="article.html" id="instagram"></a>
-                <a href="article.html" id="twiter"></a>
-            </nav>
-            <hr id="footer-line">
-            <p>九州工業大学陸上競技部</p>
-            <p>copyright © 2024 Kyushu Institute of Technology University Track and Field Club</p>
-            </div>
-       </footer>
+       <!-- フッターの埋め込み -->
+       <div id="footer"></div>
 
-       <script src="./public/js/scrol.js"></script>
+
+       <script>
+        
+        fetch("/footer")
+          .then((response) => response.text())
+          .then((data) => document.querySelector("#footer").innerHTML = data);
+       </script>
+       <script src="/js/scrol.js"></script>
     </body>
 </html>

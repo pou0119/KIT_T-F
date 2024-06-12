@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <!-- SYaa0119kyukouDai0ll9 -->
+    <head>
+        <meta charset="UTF-8">
+        <title>九州工業大学陸上競技部</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/top.css">
+        <link rel="stylesheet" href="/css/members.css">
+        <link rel="stylesheet" href="/css/output.css">
+         <!-- jQueryを読み込む -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+      <div id="header">
+       <script>
+           fetch("/header.ejs")
+               .then(response => response.text())
+               .then(data => {
+                   document.querySelector("#header").innerHTML = data;
+               })
+               .catch(error => console.error('Error fetching header:', error));
+       </script>
+      </div>
+        
+      <main class="backgraund">
+        <div id="member">
+          <h2>選手紹介</h2>
+          <div class="event-title">
+            <h3>短距離</h3>
+          </div>
+          <%let ImgUrl = [];%>
+          <div class="cards-wrapper">
+          <% for(let i = 0; i < data1.length ; i++) {
+            
+            ImgUrl.push(data1[i].url);
+            %>
+            
+              <div class="card-wrapper">
+                <div class="card-1 card-object card-object-hf">
+                  <a class="face front" href="#">
+                    <div class="title-wrapper">
+                      <div class="title"><%= data1[i].name%></div>
+                      <div class="subtitle"><%=data1%></div>
+                    </div>
+                  </a>
+                  <a class="face back" href="#">
+                    <div class="img-wrapper">
+                      <div class="avatar"></div>
+                    </div>
+                    <div class="info-wrapper">
+                      <div class="info-title"><%=data1[i].name%></div>
+                      <ul class="info-content">
+                        <li class="info-content-item">種目<span><%=data1[i].event1%><br></span></li>
+                        <li class="info-content-item">PB&UB <span><%=data1[i].PB1%><br></span></li>
+                        <li class="info-content-item">学科 <span><%=data1[i].subject%></span></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+             
+          <%}%>
+          <div class="event-title">
+            <h3>長距離</h3>
+          </div>
+          <div class="cards-wrapper">
+          <% for(let i = 0; i < data2.length ; i++) {
+            ImgUrl.push(data2[i].url);%>
+    
+            
+              <div class="card-wrapper">
+                <div class="card-1 card-object card-object-hf">
+                  <a class="face front" href="#">
+                    <div class="title-wrapper">
+                      <div class="title"><%= data2[i].name%></div>
+                      <div class="subtitle"><%=data2[i].day%></div>
+                    </div>
+                  </a>
+                  <a class="face back" href="#">
+                    <div class="img-wrapper">
+                      <div class="avatar"></div>
+                    </div>
+                    <div class="info-wrapper">
+                      <div class="info-title"><%=data2[i].name%></div>
+                      <ul class="info-content">
+                        <li class="info-content-item">種目<span><%=data2[i].event1%><br></span></li>
+                        <li class="info-content-item">PB&UB <span><%=data2[i].PB1%><br></span></li>
+                        <li class="info-content-item">学科 <span><%=data2[i].subject%></span></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            
+          <%}%>
+        </div>
+        <div class="event-title">
+          <h3>跳躍・投擲</h3>
+        </div>
+        <div class="cards-wrapper">
+        <% for(let i = 0; i < data3.length ; i++) {
+          ImgUrl.push(data3[i].url);%>
+  
+          
+            <div class="card-wrapper">
+              <div class="card-1 card-object card-object-hf">
+                <a class="face front" href="#">
+                  <div class="title-wrapper">
+                    <div class="title"><%= data3[i].name%></div>
+                    <div class="subtitle"><%=data3[i].day%></div>
+                  </div>
+                </a>
+                <a class="face back" href="#">
+                  <div class="img-wrapper">
+                    <div class="avatar"></div>
+                  </div>
+                  <div class="info-wrapper">
+                    <div class="info-title"><%=data3[i].name%></div>
+                    <ul class="info-content">
+                      <li class="info-content-item">種目<span><%=data3[i].event1%><br></span></li>
+                      <li class="info-content-item">PB&UB <span><%=data3[i].PB1%><br></span></li>
+                      <li class="info-content-item">学科 <span><%=data3[i].subject%></span></li>
+                    </ul>
+                  </div>
+                </a>
+              </div>
+            </div>
+          
+        <%}%>
+      </div>
+        
+      </div>
+      <div id="array-container" data-array="<%=JSON.stringify(ImgUrl)%>"></div>
+      </main>
+     
+
+      <!-- フッターの埋め込み -->
+      <div id="footer">
+      <script>
+      fetch("/footer.ejs")
+        .then((response) => response.text())
+        .then((data) => document.querySelector("#footer").innerHTML = data);
+      </script>
+      </div>
+      <script src="/js/member_reco.js"></script>
+    </body>
+</html>

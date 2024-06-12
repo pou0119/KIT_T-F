@@ -4,12 +4,15 @@
 @import url('https://fonts.googleapis.com/css?family=Sawarabi+Gothic');
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 body {
-    font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
- }
+    font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #cfcfcf;
+    background: linear-gradient(45deg, rgba(22, 167, 175, 0.6) 5%, rgba(23, 27, 158, 0.7) 55%, rgba(68, 9, 82, 0.5) 100%) no-repeat;
+    color: #222;
+  
+}
 
 .backgraund{
     max-width: 1200px;
-    background-color: #f5f5f5;
     margin: 0 auto;
 }
 
@@ -55,7 +58,7 @@ body {
 #nav-pc-top{
     position:absolute;
     top: 170px;
-    right: 25%;
+    right: 20%;
     font-size: 20px;
 }
 
@@ -85,12 +88,12 @@ body {
 
 #back-btn {
     color: #ffffff;
-    font-size: 50px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: black;
+    background-color: rgb(99, 157, 224);
     text-align: center;
     width: 60px;
     height: 60px;

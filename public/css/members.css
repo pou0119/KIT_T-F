@@ -1,0 +1,25 @@
+#member > h2::before ,#member > h2::after{
+    content: url(/img/top/line.png);
+}
+
+main{
+    max-width: 1200px;
+    background-color: aliceblue;
+}
+
+#member>h2{
+    font-size: 40px;
+}
+
+.event-title>h3{
+    text-align: center;
+    margin-left: 60px;
+    margin-top: 40px;
+    color: #364e96;/*文字色*/
+    padding: 0.5em 0;/*上下の余白*/
+    border-top: solid 3px #364e96;/*上線*/
+    border-bottom: solid 3px #364e96;/*下線*/
+    width: 15%;
+    font-size: 30px;
+    padding: 10px;
+}
