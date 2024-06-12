@@ -30,49 +30,56 @@ app.get('/footer', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-
-
-        // top.htmlをクライアントに送信する前に、データをテンプレートに渡して組み込む
-        res.render('top.ejs');
-    });
+    // top.htmlをクライアントに送信する前に、データをテンプレートに渡して組み込む
+    res.render('top.ejs');
+});
 
 
 
 app.get('/member', (req, res) => {
-    connection.query('SELECT * FROM member WHERE event_id=2',(error,results2,fields)=>{
-        if(error){
+    connection.query('SELECT * FROM member WHERE grade IN ("B1", "B2", "B3", "B4", "M1", "M2")', (error, results, fields) => {
+        if (error) {
             console.log('データの取得中にエラーが発生しました:', error);
             return;
         }
 
-        connection.query('SELECT * FROM member WHERE event_id=3',(error,results3,fields)=>{
-            if(error){
-                console.log('データの取得中にエラーが発生しました:', error);
-                return;
-            }
+        // 結果をグレードごとに分類する
+        let data = {
+            1: [],
+            2: [],
+            3: [],
+            4: [],
+            5: [],
+            6: []
+        };
 
-            connection.query('SELECT * FROM member WHERE event_id=4',(error,results4,fields)=>{
-                if(error){
-                    console.log('データの取得中にエラーが発生しました:', error);
-                    return;
-                }
-                connection.query('SELECT * FROM member WHERE event_id=1', (error, results1, fields) => {
-                    if (error) {
-                      console.error('データの取得中にエラーが発生しました:', error);
-                      return;
-                    }
-                    res.render('member',{data1:results1,data2:results2,data3:results3,data4:results4});
-                });
-                
-            });
-            
+        results.forEach(row => {
+            switch (row.grade) {
+                case 'B1':
+                    data[1].push(row);
+                    break;
+                case 'B2':
+                    data[2].push(row);
+                    break;
+                case 'B3':
+                    data[3].push(row);
+                    break;
+                case 'B4':
+                    data[4].push(row);
+                    break;
+                case 'M1':
+                    data[5].push(row);
+                    break;
+                case 'M2':
+                    data[6].push(row);
+                    break;
+            }
         });
 
+        // テンプレートに渡す
+        res.render('member', { data });
     });
-    
-    
 });
-
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
