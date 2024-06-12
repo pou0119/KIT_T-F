@@ -1,0 +1,30 @@
+#record > h2::before ,#record > h2::after{
+    content: url(/img/top/line.png);
+}
+main{
+    max-width: 1200px;
+    background-color: aliceblue;
+    margin: 0 auto;
+}
+
+#record > h2{
+    font-size: 40px;
+    text-align: center;
+}
+
+#record > table {
+    border-collapse: collapse;
+    width: 100%;
+}
+#record > th, td {
+    border: 1px solid black;
+    padding: 8px;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+#record > td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
