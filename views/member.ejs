@@ -30,11 +30,12 @@
             <h3>短距離</h3>
           </div>
           <%let ImgUrl = [];%>
+          <div class="cards-wrapper">
           <% for(let i = 0; i < data1.length ; i++) {
             
-            ImgUrl.push(data1[i].name);
+            ImgUrl.push(data1[i].url);
             %>
-            <div class="cards-wrapper">
+            
               <div class="card-wrapper">
                 <div class="card-1 card-object card-object-hf">
                   <a class="face front" href="#">
@@ -66,7 +67,7 @@
           </div>
           <div class="cards-wrapper">
           <% for(let i = 0; i < data2.length ; i++) {
-            ImgUrl.push(data2[i].name);%>
+            ImgUrl.push(data2[i].url);%>
     
             
               <div class="card-wrapper">
