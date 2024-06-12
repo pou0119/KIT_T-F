@@ -25,113 +25,47 @@
         
       <main class="backgraund">
         <div id="member">
+          <%let ImgUrl = [];
+            let event_title=['','B1','B2','B3','B4','M1','M2'];
+          %>
           <h2>選手紹介</h2>
-          <div class="event-title">
-            <h3>短距離</h3>
-          </div>
-          <%let ImgUrl = [];%>
-          <div class="cards-wrapper">
-          <% for(let i = 0; i < data1.length ; i++) {
-            
-            ImgUrl.push(data1[i].url);
-            %>
-            
-              <div class="card-wrapper">
-                <div class="card-1 card-object card-object-hf">
-                  <a class="face front" href="#">
-                    <div class="title-wrapper">
-                      <div class="title"><%= data1[i].name%></div>
-                      <div class="subtitle"><%=data1%></div>
-                    </div>
-                  </a>
-                  <a class="face back" href="#">
-                    <div class="img-wrapper">
-                      <div class="avatar"></div>
-                    </div>
-                    <div class="info-wrapper">
-                      <div class="info-title"><%=data1[i].name%></div>
-                      <ul class="info-content">
-                        <li class="info-content-item">種目<span><%=data1[i].event1%><br></span></li>
-                        <li class="info-content-item">PB&UB <span><%=data1[i].PB1%><br></span></li>
-                        <li class="info-content-item">学科 <span><%=data1[i].subject%></span></li>
-                      </ul>
-                    </div>
-                  </a>
-                </div>
-              </div>
+          <%for(let k=1;k< 7;k++){ %>
+            <div class="event-title">
+              <h3><%=event_title[k]%></h3>
             </div>
-             
-          <%}%>
-          <div class="event-title">
-            <h3>長距離</h3>
-          </div>
-          <div class="cards-wrapper">
-          <% for(let i = 0; i < data2.length ; i++) {
-            ImgUrl.push(data2[i].url);%>
-    
-            
-              <div class="card-wrapper">
-                <div class="card-1 card-object card-object-hf">
-                  <a class="face front" href="#">
-                    <div class="title-wrapper">
-                      <div class="title"><%= data2[i].name%></div>
-                      <div class="subtitle"><%=data2[i].day%></div>
-                    </div>
-                  </a>
-                  <a class="face back" href="#">
-                    <div class="img-wrapper">
-                      <div class="avatar"></div>
-                    </div>
-                    <div class="info-wrapper">
-                      <div class="info-title"><%=data2[i].name%></div>
-                      <ul class="info-content">
-                        <li class="info-content-item">種目<span><%=data2[i].event1%><br></span></li>
-                        <li class="info-content-item">PB&UB <span><%=data2[i].PB1%><br></span></li>
-                        <li class="info-content-item">学科 <span><%=data2[i].subject%></span></li>
-                      </ul>
-                    </div>
-                  </a>
+            <div class="cards-wrapper">
+            <% for(let i = 0; i < data[k].length ; i++) {
+              ImgUrl.push(data[k][i].url);
+              %>
+              
+                <div class="card-wrapper">
+                  <div class="card-1 card-object card-object-hf">
+                    <a class="face front" href="#">
+                      <div class="title-wrapper">
+                        <div class="title"><%= data[k][i].name%></div>
+                        <div class="subtitle"><%=data[k][i].day%></div>
+                      </div>
+                    </a>
+                    <a class="face back" href="#">
+                      <div class="img-wrapper">
+                        <div class="avatar"></div>
+                      </div>
+                      <div class="info-wrapper">
+                        <div class="info-title"><%=data[k][i].name%></div>
+                        <ul class="info-content">
+                          <li class="info-content-item">種目<span><%=data[k][i].event1%><br></span></li>
+                          <li class="info-content-item">PB&UB <span><%=data[k][i].PB1%><br></span></li>
+                          <li class="info-content-item">学科 <span><%=data[k][i].subject%></span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </div>
             
+            <%}%>
+          </div>
           <%}%>
         </div>
-        <div class="event-title">
-          <h3>跳躍・投擲</h3>
-        </div>
-        <div class="cards-wrapper">
-        <% for(let i = 0; i < data3.length ; i++) {
-          ImgUrl.push(data3[i].url);%>
-  
-          
-            <div class="card-wrapper">
-              <div class="card-1 card-object card-object-hf">
-                <a class="face front" href="#">
-                  <div class="title-wrapper">
-                    <div class="title"><%= data3[i].name%></div>
-                    <div class="subtitle"><%=data3[i].day%></div>
-                  </div>
-                </a>
-                <a class="face back" href="#">
-                  <div class="img-wrapper">
-                    <div class="avatar"></div>
-                  </div>
-                  <div class="info-wrapper">
-                    <div class="info-title"><%=data3[i].name%></div>
-                    <ul class="info-content">
-                      <li class="info-content-item">種目<span><%=data3[i].event1%><br></span></li>
-                      <li class="info-content-item">PB&UB <span><%=data3[i].PB1%><br></span></li>
-                      <li class="info-content-item">学科 <span><%=data3[i].subject%></span></li>
-                    </ul>
-                  </div>
-                </a>
-              </div>
-            </div>
-          
-        <%}%>
-      </div>
-        
-      </div>
       <div id="array-container" data-array="<%=JSON.stringify(ImgUrl)%>"></div>
       </main>
      
