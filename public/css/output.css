@@ -8,13 +8,9 @@ body {
   font: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #cfcfcf;
   background: linear-gradient(45deg, rgba(22, 167, 175, 0.6) 5%, rgba(23, 27, 158, 0.7) 55%, rgba(68, 9, 82, 0.5) 100%) no-repeat;
-  background-size: 200%;
   color: #222;
 }
-html,
-body {
-  height: 100%;
-}
+
 .cards-wrapper {
   position: relative;
   height: 100%;
@@ -131,7 +127,7 @@ body {
   font-family: 'Archivo Black', sans-serif;
   width: 100%;
   text-transform: uppercase;
-  font-size: 2vw;
+  font-size: 1.8vw;
   line-height: 1;
   opacity: 0.8;
   transition: opacity 0.2s ease;
