@@ -4,7 +4,11 @@
 @import url('https://fonts.googleapis.com/css?family=Sawarabi+Gothic');
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 body {
-    font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+    font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #cfcfcf;
+    background: linear-gradient(45deg, rgba(22, 167, 175, 0.6) 5%, rgba(23, 27, 158, 0.7) 55%, rgba(68, 9, 82, 0.5) 100%) no-repeat;
+    color: #222;
+  
 }
 
 .backgraund{

@@ -52,7 +52,9 @@ window.onload = function() {
     
     // .img-wrapper要素を取得
     var imgWrappers = document.querySelectorAll(".img-wrapper");
-    const imgWrapperCount = imgWrappers.length;
+    var imgFronts = document.querySelectorAll('.card-object.card-1 .front ');
+    var imgAvaters = document.querySelectorAll('.card-object.card-1 .back .avatar');
+    
     let i = 0;
     // すべての.img-wrapper要素に対してループを実行し、背景画像を変更
     imgWrappers.forEach(function(imgWrapper, index) {
@@ -61,6 +63,22 @@ window.onload = function() {
             imgWrapper.style.backgroundImage = "url('" + arrayDataFromHTML[i] + "')";
         } 
         i++;
+    });
+    let j=0;
+    imgFronts.forEach(function(imgFront, index) {
+        if (index === j) {
+            // 一番目の.img-wrapper要素
+            imgFront.style.backgroundImage = "url('" + arrayDataFromHTML[j] + "')";
+        } 
+        j++;
+    });
+    let k=0;
+    imgAvaters.forEach(function(imgAvater, index) {
+        if (index === k) {
+            // 一番目の.img-wrapper要素
+            imgAvater.style.backgroundImage = "url('" + arrayDataFromHTML[k] + "')";
+        } 
+        k++;
     });
 };
 

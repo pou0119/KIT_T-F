@@ -41,7 +41,7 @@
                   <a class="face front" href="#">
                     <div class="title-wrapper">
                       <div class="title"><%= data1[i].name%></div>
-                      <div class="subtitle">2004/01/19</div>
+                      <div class="subtitle"><%=data1%></div>
                     </div>
                   </a>
                   <a class="face back" href="#">
@@ -75,7 +75,7 @@
                   <a class="face front" href="#">
                     <div class="title-wrapper">
                       <div class="title"><%= data2[i].name%></div>
-                      <div class="subtitle">2004/01/19</div>
+                      <div class="subtitle"><%=data2[i].day%></div>
                     </div>
                   </a>
                   <a class="face back" href="#">
@@ -93,10 +93,45 @@
                   </a>
                 </div>
               </div>
-          
+            
           <%}%>
-          </div>
         </div>
+        <div class="event-title">
+          <h3>跳躍・投擲</h3>
+        </div>
+        <div class="cards-wrapper">
+        <% for(let i = 0; i < data3.length ; i++) {
+          ImgUrl.push(data3[i].url);%>
+  
+          
+            <div class="card-wrapper">
+              <div class="card-1 card-object card-object-hf">
+                <a class="face front" href="#">
+                  <div class="title-wrapper">
+                    <div class="title"><%= data3[i].name%></div>
+                    <div class="subtitle"><%=data3[i].day%></div>
+                  </div>
+                </a>
+                <a class="face back" href="#">
+                  <div class="img-wrapper">
+                    <div class="avatar"></div>
+                  </div>
+                  <div class="info-wrapper">
+                    <div class="info-title"><%=data3[i].name%></div>
+                    <ul class="info-content">
+                      <li class="info-content-item">種目<span><%=data3[i].event1%><br></span></li>
+                      <li class="info-content-item">PB&UB <span><%=data3[i].PB1%><br></span></li>
+                      <li class="info-content-item">学科 <span><%=data3[i].subject%></span></li>
+                    </ul>
+                  </div>
+                </a>
+              </div>
+            </div>
+          
+        <%}%>
+      </div>
+        
+      </div>
       <div id="array-container" data-array="<%=JSON.stringify(ImgUrl)%>"></div>
       </main>
      
