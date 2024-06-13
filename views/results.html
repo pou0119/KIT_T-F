@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<!-- SYaa0119kyukouDai0ll9 -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>九州工業大学陸上競技部</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/top.css">
+    <link rel="stylesheet" href="/css/results.css">
+    <link rel="stylesheet" href="/css/output.css">
+    <!-- jQueryを読み込む -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <script>
+            fetch("/header.ejs")
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector("#header").innerHTML = data;
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        </script>
+    </div>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>日付</th>
+                    <th>大会名</th>
+                    <th>会場</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024/6/1</td>
+                    <td><a href="20240601.html">北九州インカレ</a></td>
+                    <td>鞘ヶ谷陸上競技場</td>
+                </tr>
+                <tr>
+                    <td>2023/10/14-15</td>
+                    <td><a href="20241014.html">新人戦</a></td>
+                    <td>島原市陸上競技場</td>
+                </tr>
+                <tr>
+                    <td>2023/9/22-24</td>
+                    <td><a href="20240922.html">九州CS</a></td>
+                    <td>久留米総合スポーツセンター陸上競技場</td>
+                </tr>
+                <tr>
+                    <td>2023/6/6</td>
+                    <td><a href="20230606.html">北九州インカレ</a></td>
+                    <td>鞘ヶ谷陸上競技場</td>
+                </tr>
+                <tr>
+                    <td>2023/5/5</td>
+                    <td><a href="20230505.html">九州インカレ</a></td>
+                    <td>久留米総合スポーツセンター陸上競技場</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- フッターの埋め込み -->
+    <div id="footer">
+        <script>
+            fetch("/footer.ejs")
+                .then((response) => response.text())
+                .then((data) => document.querySelector("#footer").innerHTML = data);
+        </script>
+    </div>
+    <script src="/js/member_reco.js"></script>
+</body>
+
+</html>

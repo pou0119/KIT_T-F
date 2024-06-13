@@ -1,0 +1,39 @@
+table {
+    background:#ffffff;
+	table-layout: fixed;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 20px;
+    width: auto;
+    border-collapse: collapse;
+    justify-content: space-between;
+    position: relative;
+    
+}
+
+table a {
+    color: #1b021d;
+    text-decoration: underline;
+    transition: .3s;
+}
+
+table a:hover {
+    color: #5905eb;
+    transition: .3s;
+}
+
+/* ヘッダー */
+table thead th {
+	background:#5BAD92;
+	font-weight: bold;
+	color:#fff;
+    width: 400px;
+}
+
+/* ボディデータ・フッターデータ */
+table tbody td {
+    border: solid 1px black;
+    width: 400px;
+}
