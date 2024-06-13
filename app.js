@@ -39,7 +39,7 @@ app.get('/results',(req,res)=>{
 
 app.get('/', (req, res) => {
     // top.htmlをクライアントに送信する前に、データをテンプレートに渡して組み込む
-    res.render('top.ejs');
+    res.render('top');
 });
 
 
@@ -88,6 +88,7 @@ app.get('/member', (req, res) => {
         res.render('member', { data });
     });
 });
+
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
