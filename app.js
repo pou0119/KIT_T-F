@@ -29,6 +29,14 @@ app.get('/footer', (req, res) => {
     res.render('footer');
 });
 
+app.get('/records',(req,res)=>{
+    res.render('records');
+});
+
+app.get('/results',(req,res)=>{
+    res.render('results');
+});
+
 app.get('/', (req, res) => {
     // top.htmlをクライアントに送信する前に、データをテンプレートに渡して組み込む
     res.render('top.ejs');
