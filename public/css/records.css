@@ -1,10 +1,12 @@
 #record > h2::before ,#record > h2::after{
     content: url(/img/top/line.png);
 }
+
 main{
     max-width: 1200px;
     background-color: aliceblue;
     margin: 0 auto;
+    padding-bottom: 50px
 }
 
 #record > h2{
@@ -15,9 +17,14 @@ main{
 #record > h1{
     font-size: 30px;
     text-align: center;
+    background:linear-gradient(transparent 50%, #00aeff 30%);
+    width: 180px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #record > table {
+    font-size: 20px;
     border-collapse: collapse;
     width: 90%;
     text-align: center;
@@ -26,7 +33,7 @@ main{
 }
 
 #record > th, td {
-    border: 3px solid black;
+    border: 2px solid black;
     padding: 8px;
     background-color: #f2f2f2;
 }
