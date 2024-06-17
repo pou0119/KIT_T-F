@@ -42,7 +42,9 @@ app.get('/', (req, res) => {
     res.render('top');
 });
 
-
+app.get('/blog',(req,res)=>{
+    res.render('blog');
+});
 
 app.get('/member', (req, res) => {
     connection.query('SELECT * FROM member WHERE grade IN ("B1", "B2", "B3", "B4", "M1", "M2")', (error, results, fields) => {

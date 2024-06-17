@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>九州工業大学陸上競技部</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/blog.css">
+        <link rel="stylesheet" href="/css/top.css">
+    </head>
+    <body>
+        <div id="header"></div>
+        <script>
+            fetch("/header")
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector("#header").innerHTML = data;
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        </script>
+
+        <main>
+            <div id="blog-title"><h1>陸ブログ</h1></div>
+            <article>
+                <section id="article-section">
+                <a class="left-article" href="/records">
+                    <h2>井上遥友の大新劇</h2>
+                    <div class="left-main">
+                        <div class="article-img">
+                        <img src="/img/url1.jpg" class="left-img" width="250px" height="200px">
+                        </div>
+                        <div class="article-context">
+
+                            <!-- 40文字以内 -->
+                            <p>2024年6月17日にサークルの女の子と連絡を取り合っていた。井上氏は彼女がいるので今後の展開が楽しみだ。</p>
+                        </div>
+                    </div>
+                </a>
+                 <div class="right-article">
+                    <h2>タイトル</h2>
+                    <div class="right-main">
+                        <div class="article-img">
+                            <img src="/img/url1.jpg" class="left-img" width="210px" height="170px">
+                        </div>
+                        <div class="article-context">
+                            <!-- 72文字以内 -->
+                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        </div>
+                    </div>
+                 </div>   
+                </section>
+            </article>
+
+        </main>
+
+        <div id="footer"></div>
+        <script>
+            fetch("/footer")
+                .then((response) => response.text())
+                .then((data) => document.querySelector("#footer").innerHTML = data);
+        </script>
+    </body>
+</html>

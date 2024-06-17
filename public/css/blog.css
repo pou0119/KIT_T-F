@@ -1,0 +1,152 @@
+main{
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+#blog-title{
+    text-align: center;
+    width: 300px;
+    margin:auto;
+}
+
+#article-section{
+    display: flex;
+    max-width: 1200px;
+    justify-content:space-around;
+    margin: auto;
+}
+
+
+
+.right-main,.left-main{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.right-article > h2,.left-article > h2{
+    text-align: center;
+    margin: 0px;
+}
+
+.article-img{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-bottom: auto;
+    
+}
+
+
+.article-context > p{
+    width: 150px;
+    height: 130px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.left-article,.right-article{
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    background-color: #ffffff;
+    border-top: solid 4px black;
+    border-bottom: solid 4px black;
+    width: 38%;
+    height: 240px;
+}
+.left-article:before, .main {
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#blog-title {
+    text-align: center;
+    width: 300px;
+    margin: auto;
+}
+
+#article-section {
+    display: flex;
+    max-width: 1200px;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.right-main, .left-main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.right-article > h2, .left-article > h2 {
+    text-align: center;
+    margin: 0;
+    z-index: 2;
+}
+
+.article-img {
+    margin: auto; /* 修正：autoで中央配置 */
+    z-index: 3;
+}
+
+.article-context > p {
+    width: 120px;
+    height: 130px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    z-index: 2;
+}
+
+.left-article, .right-article {
+    margin: 2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    background-color: #ffffff;
+    border-top: solid 4px black;
+    border-bottom: solid 4px black;
+    width: 38%;
+    height: 240px;
+}
+
+.left-article:before, .left-article:after,.right-article:before, .right-article:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 4px;
+    height: calc(100% + 20px);
+    background-color: black;
+}
+
+.left-article:before, .right-article:before {
+    left: 10px;
+}
+
+.left-article:after, .right-article:after {
+    right: 10px;
+}
+.right-article::before,.right-article::after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 4px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.left-article:before,.right-article::before {left: 10px;}
+.left-article:after ,.right-article::after{right: 10px;}
