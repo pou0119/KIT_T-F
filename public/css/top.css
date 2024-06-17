@@ -77,7 +77,7 @@ body {
     color: black;
 }
 
-#nav-pc-top > a:hover ,.detail_place:hover,#nav-px-end>a:hover{
+#nav-pc-top > a:hover ,.detail_place:hover,#nav-pc-end>a:hover{
     color: black;
     text-decoration: underline;
 }
