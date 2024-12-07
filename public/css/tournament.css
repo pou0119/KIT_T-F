@@ -1,0 +1,68 @@
+
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+    position: relative;
+}
+
+h1::before,
+h1::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 2px;
+    background-color: #007BFF; /* 青色の線に変更 */
+}
+
+h1::before {
+    left: 0;
+}
+
+h1::after {
+    right: 0;
+}
+
+.table-container {
+    width: 60%; /* 横幅を狭く設定 */
+    margin: 20px auto;
+    background-color: white; /* 背景色を白に設定 */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* 角を丸くする */
+}
+
+table {
+    width: 100%; /* テーブルの幅をコンテナ内にフィット */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #007BFF; /* 青色に変更 */
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+a {
+    color: #007BFF; /* 青色に変更 */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
