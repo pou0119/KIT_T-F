@@ -116,7 +116,7 @@ app.get('/tournamentrecord/:id', (req, res) => {
     const events = {
       '100m': [], '200m': [], '400m': [], '800m': [], '1500m': [], '5000m': [],
       '10000m': [], '110mハードル': [], '100mハードル': [], '400mハードル': [],
-      '4×100mリレー': [], '4×400mリレー': [], '3000m障害物競走': [],
+      '4×100m': [], '4×400m': [], '3000m障害': [],
       '走り幅跳び': [], '三段跳び': [], '棒高跳び': [], '走り高跳び': [],
       '砲丸投げ': [], '円盤投げ': [], 'ハンマー投げ': [], 'やり投げ': [],
       'マラソン': [], 'ハーフマラソン': [], '10kmレース': [], '20km競歩': [], '50km競歩': []
@@ -146,8 +146,16 @@ app.get('/blogedit', (req, res) => {
   if (!req.session.userId) {
     return res.redirect('/login');
   }
-  res.render('blogedit');
+  connection.query('SELECT * FROM blog_posts ORDER BY created_at DESC', (error, results) => {
+    if (error) {
+      console.error('ブログ投稿の取得中にエラーが発生しました:', error);
+      return res.status(500).send('ブログ投稿の取得中にエラーが発生しました');
+    }
+    res.render('blogedit', { posts: results });
+  });
 });
+
+
 
 app.get('/login', (req, res) => {
   res.render('login');
@@ -231,6 +239,47 @@ app.post('/blogedit', upload.single('image'), [
   });
 });
 
+app.get('/edit/:id', (req, res) => {
+  const postId = req.params.id;
+  connection.query('SELECT * FROM blog_posts WHERE id = ?', [postId], (error, results) => {
+    if (error) {
+      console.error('ブログ投稿の取得中にエラーが発生しました:', error);
+      return res.status(500).send('ブログ投稿の取得中にエラーが発生しました');
+    }
+    if (results.length > 0) {
+      res.render('edit', { post: results[0] });
+    } else {
+      res.status(404).send('ブログ投稿が見つかりません');
+    }
+  });
+});
+
+app.post('/edit/:id', upload.single('image'), (req, res) => {
+  const postId = req.params.id;
+  const { title, content } = req.body;
+  const image_url = req.file ? '/uploads/' + req.file.filename : null;
+  
+  connection.query('UPDATE blog_posts SET title = ?, content = ?, image_url = ? WHERE id = ?', [title, content, image_url, postId], (error) => {
+    if (error) {
+      console.error('ブログ投稿の更新中にエラーが発生しました:', error);
+      return res.status(500).send('ブログ投稿の更新中にエラーが発生しました');
+    }
+    res.redirect('/blogedit');
+  });
+});
+
+app.post('/delete/:id', (req, res) => {
+  const postId = req.params.id;
+  connection.query('DELETE FROM blog_posts WHERE id = ?', [postId], (error) => {
+    if (error) {
+      console.error('ブログ投稿の削除中にエラーが発生しました:', error);
+      return res.status(500).send('ブログ投稿の削除中にエラーが発生しました');
+    }
+    res.redirect('/blogedit');
+  });
+});
+
+
 app.get('/blog/:id', (req, res) => {
   const postId = req.params.id;
   connection.query('SELECT * FROM blog_posts WHERE id = ?', [postId], (error, results) => {
@@ -245,7 +294,6 @@ app.get('/blog/:id', (req, res) => {
     }
   });
 });
-
 
 // サーバー起動
 app.listen(port, () => {

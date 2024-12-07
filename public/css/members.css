@@ -9,6 +9,8 @@ main{
 
 #member>h2{
     font-size: 40px;
+    text-align: center; /* 中央寄せ */ 
+    margin-top: 20px;
 }
 
 .event-title>h3{

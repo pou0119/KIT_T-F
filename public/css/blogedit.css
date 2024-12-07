@@ -1,4 +1,4 @@
-body {
+#login{
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
@@ -15,11 +15,19 @@ h1 {
     color: #333;
 }
 
-form {
-    background-color: #f4f4f4;
+form.form-new {
+    background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
+}
+
+form.edit-form {
+    padding: 0;
+}
+
+form.delete-form {
+    padding: 0;
 }
 
 form div {
@@ -54,4 +62,53 @@ button {
 
 button:hover {
     background-color: #444;
+}
+
+article {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+article:hover {
+    background-color: #e0e0e0;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.post-actions {
+    margin-bottom: 20px;
+}
+
+.post-actions .edit-button, .post-actions .delete-button {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.post-actions .edit-button:hover, .post-actions .delete-button:hover {
+    background-color: #ddd;
+    color: #000;
 }

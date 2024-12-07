@@ -10,8 +10,9 @@
 <body>
     <%- include('header') %>
     <main>
+        <h1>ブログ詳細</h1>
         <article>
-            <h1><%= post.title %></h1>
+            <h3><%= post.title %></h3>
             <div class="content"><%= post.content %></div>
             <% if (post.image_url) { %>
                 <img src="<%= post.image_url %>" alt="<%= post.title %>">

@@ -11,7 +11,7 @@
     <%- include('header') %>
     <main>
         <h1>ブログ投稿</h1>
-        <form action="/blogedit" method="POST" enctype="multipart/form-data">
+        <form class="form-new" action="/blogedit" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="title">タイトル:</label>
                 <input type="text" id="title" name="title" required>
@@ -26,7 +26,42 @@
             </div>
             <button type="submit">投稿</button>
         </form>
+
+        <h2>過去の投稿</h2>
+        <% posts.forEach(post => { %>
+            <a href="/blog/<%= post.id %>"> <!-- リンクを追加 -->
+                <article>
+                    <h3><%= post.title %></h3>
+                    <p><%= post.content.substring(0, 100) %>...</p>
+                    <% if (post.image_url) { %>
+                        <img src="<%= post.image_url %>" alt="<%= post.title %>">
+                    <% } %>
+                    <p>投稿日: <%= post.created_at.toLocaleDateString() %></p>
+                </article>
+            </a> <!-- リンクを閉じる -->
+            <div class="post-actions">
+                <form class="edit-form" action="/edit/<%= post.id %>" method="GET" style="display:inline;">
+                    <button type="button" class="edit-button" onclick="location.href='/edit/<%= post.id %>'">編集</button>
+                </form>
+                <form class="delete-form" action="/delete/<%= post.id %>" method="POST" style="display:inline;">
+                    <button type="submit" class="delete-button">削除</button>
+                </form>
+            </div>
+        <% }) %>
     </main>
     <%- include('footer') %>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var deleteForms = document.querySelectorAll('.delete-form');
+            deleteForms.forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    var confirmed = confirm('本当に削除してもよろしいですか？');
+                    if (!confirmed) {
+                        event.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ログイン - ブログ管理</title>
-    <link rel="stylesheet" href="/css/top.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
-<body>
-    <%- include('header') %>
-    <main>
+<body >
+    <div id="login">
+    <main id="loginmain">
         <h1>ログイン</h1>
         <form action="/login" method="POST">
             <div>
@@ -25,6 +25,7 @@
             <p class="error"><%= error %></p>
         <% } %>
     </main>
-    <%- include('footer') %>
+    </div>
+
 </body>
 </html>

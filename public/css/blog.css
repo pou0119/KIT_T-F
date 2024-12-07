@@ -6,13 +6,16 @@ body {
 }
 
 main {
+    position: center;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
 h1 {
-    color: #333;
+    color: black;
+    text-align: center; /* 中央寄せ */ 
+    margin-top: 20px;
 }
 
 article {
@@ -24,8 +27,8 @@ article {
     transition: background-color 0.3s ease; /* ホバー時の背景色変更を追加 */
 }
 
-article h2 {
-    color: #444;
+article h3 {
+    color: black;
     font-size: 24px; /* タイトルのフォントサイズを大きく設定 */
 }
 
