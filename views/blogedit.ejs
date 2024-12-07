@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ブログ投稿</title>
+    <link rel="stylesheet" href="/css/blogedit.css">
+</head>
+<body>
+    <%- include('header') %>
+    <main>
+        <h1>ブログ投稿</h1>
+        <form action="/blogedit" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div>
+                <label for="title">タイトル:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div>
+                <label for="content">内容:</label>
+                <textarea id="content" name="content" required></textarea>
+            </div>
+            <div>
+                <label for="image">画像:</label>
+                <input type="file" id="image" name="image">
+            </div>
+            <button type="submit">投稿</button>
+        </form>
+    </main>
+    <%- include('footer') %>
+</body>
+</html>
