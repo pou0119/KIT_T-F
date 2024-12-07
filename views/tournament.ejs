@@ -7,16 +7,7 @@
     <link rel="stylesheet" href="/css/top.css">
 </head>
 <body>
-    <div id="header">
-        <script>
-          fetch("/header.ejs")
-            .then(response => response.text())
-            .then(data => {
-              document.querySelector("#header").innerHTML = data;
-            })
-            .catch(error => console.error('Error fetching header:', error));
-        </script>
-    </div>
+    <%- include('header') %>
 
     <div class="table-container">
         <h1>大会一覧</h1>
@@ -40,12 +31,6 @@
         </table>
     </div>
     
-    <div id="footer">
-        <script>
-          fetch("/footer.ejs")
-            .then((response) => response.text())
-            .then((data) => document.querySelector("#footer").innerHTML = data);
-        </script>
-    </div>
+    <%- include('footer') %>
 </body>
 </html>

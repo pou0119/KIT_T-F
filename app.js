@@ -231,6 +231,22 @@ app.post('/blogedit', upload.single('image'), [
   });
 });
 
+app.get('/blog/:id', (req, res) => {
+  const postId = req.params.id;
+  connection.query('SELECT * FROM blog_posts WHERE id = ?', [postId], (error, results) => {
+    if (error) {
+      console.error('ブログ投稿の取得中にエラーが発生しました:', error);
+      return res.status(500).send('ブログ投稿の取得中にエラーが発生しました');
+    }
+    if (results.length > 0) {
+      res.render('blogdetail', { post: results[0] });
+    } else {
+      res.status(404).send('ブログ投稿が見つかりません');
+    }
+  });
+});
+
+
 // サーバー起動
 app.listen(port, () => {
   console.log(`サーバーが http://localhost:${port} で実行中です`);
