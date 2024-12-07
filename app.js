@@ -3,7 +3,6 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-const csrf = require('csurf');
 const cookieParser = require('cookie-parser'); // cookie-parserの追加
 const { body, validationResult } = require('express-validator');
 const session = require('express-session');
@@ -38,11 +37,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-app.use(express.urlencoded({ extended: true }));
-
-// CSRF保護設定
-const csrfProtection = csrf({ cookie: true });
-app.use(csrfProtection);
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // 画像アップロード設定
 const storage = multer.diskStorage({
@@ -151,11 +146,11 @@ app.get('/blogedit', (req, res) => {
   if (!req.session.userId) {
     return res.redirect('/login');
   }
-  res.render('blogedit', { csrfToken: req.csrfToken() });
+  res.render('blogedit');
 });
 
 app.get('/login', (req, res) => {
-  res.render('login', { csrfToken: req.csrfToken() });
+  res.render('login');
 });
 
 app.post('/login', [
@@ -165,8 +160,7 @@ app.post('/login', [
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).render('login', {
-      error: '入力内容が正しくありません',
-      csrfToken: req.csrfToken()
+      error: '入力内容が正しくありません'
     });
   }
 
@@ -175,8 +169,7 @@ app.post('/login', [
     if (error) {
       console.error('ログイン中にエラーが発生しました:', error);
       return res.status(500).render('login', {
-        error: 'サーバーエラーが発生しました',
-        csrfToken: req.csrfToken()
+        error: 'サーバーエラーが発生しました'
       });
     }
     if (results.length > 0) {
@@ -186,15 +179,13 @@ app.post('/login', [
           res.redirect('/blogedit');
         } else {
           res.render('login', {
-            error: 'ユーザー名またはパスワードが正しくありません',
-            csrfToken: req.csrfToken()
+            error: 'ユーザー名またはパスワードが正しくありません'
           });
         }
       });
     } else {
       res.render('login', {
-        error: 'ユーザー名またはパスワードが正しくありません',
-        csrfToken: req.csrfToken()
+        error: 'ユーザー名またはパスワードが正しくありません'
       });
     }
   });
@@ -213,11 +204,12 @@ app.post('/blogedit', upload.single('image'), [
   body('title').trim().isLength({ min: 1, max: 255 }).escape(),
   body('content').trim().isLength({ min: 1 }).escape()
 ], (req, res) => {
+  console.log("aaaaaaaaaaaa"); // 追加
+
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).render('blogedit', {
-      error: '入力内容が正しくありません',
-      csrfToken: req.csrfToken()
+      error: '入力内容が正しくありません'
     });
   }
 
@@ -232,8 +224,7 @@ app.post('/blogedit', upload.single('image'), [
     if (error) {
       console.error('ブログ投稿中にエラーが発生しました:', error);
       return res.status(500).render('blogedit', {
-        error: 'ブログの投稿に失敗しました',
-        csrfToken: req.csrfToken()
+        error: 'ブログの投稿に失敗しました'
       });
     }
     res.redirect('/blog');

@@ -11,7 +11,6 @@
     <main>
         <h1>ブログ投稿</h1>
         <form action="/blogedit" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div>
                 <label for="title">タイトル:</label>
                 <input type="text" id="title" name="title" required>
